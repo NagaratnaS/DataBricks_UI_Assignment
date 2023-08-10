@@ -1,0 +1,36 @@
+.header_parent {
+  margin-left: 5%;
+}
+
+.header_container {
+  display: flex; 
+  align-items: center; 
+  padding: 7px;
+  background-color: #f2f2f2;
+}
+
+.heading {
+  margin-right: auto;
+  margin-left: 10%; 
+  font-style: bold;
+  font-weight: 800;
+  font-size: x-large;
+}
+
+.download__button {
+  margin-left: auto;
+  margin-right: 10%;
+  background-color: #ff3620; 
+  color: white; 
+  padding: 8px 15px; 
+  border-radius: 10px; 
+  border: none; 
+  cursor: pointer;
+  font-weight: 500;
+  width: 12%;
+  height: 100%;
+}
+
+img {
+  margin-right: 2%;
+}

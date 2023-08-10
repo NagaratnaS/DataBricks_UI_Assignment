@@ -1,0 +1,34 @@
+.button_and_text_container {
+    margin-left: 15%;
+}
+
+
+.button_container {
+    margin-left: 1%;
+    display: flex;
+}
+
+
+
+.first_dropdown {
+    background-color: #ffffff;
+    width: 11%;
+    border-radius: 7px; 
+    border: none; 
+    text-align: center;
+    padding: 5px 5px;
+    font-weight: 700;
+}
+
+
+
+.second_dropdown {
+    background-color: #ffffff;
+    width: 11%;
+    margin-left: 10%;
+    border-radius: 7px; 
+    border: none; 
+    text-align: center;
+    padding: 5px 5px;
+    font-weight: 700;
+}

@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header/Header";
+import Comparison from "./Comparison/Comparison";
+import SearchBar from "./SearchBar/SearchBar";
+import SideNavBar from "./SideNavBar/SideNavBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style = {{backgroundColor : '#f6f4f4' , height: '601px'}}>
+      <Header/>
+      <Comparison/>
+      <SearchBar/>
+      {/* <SideNavBar/> */}
     </div>
   );
 }
