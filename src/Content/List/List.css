@@ -1,0 +1,15 @@
+.list_line {
+    height: 0.5px;
+    background-color: #c9c9ce;
+    width: 91%;
+    margin-left: 0px;
+}
+
+.list_heading {
+    padding: 0px;
+    list-style-type: none;
+}
+
+.list_ele {
+    margin-left: 2%;
+}
