@@ -5,3 +5,56 @@
     width: 5%;
     float: left;
 }
+
+.list_style {
+    display: block;
+    margin-left: 25%;
+    margin-top: 20%;
+    padding-left: 0%;
+}
+
+
+.list_element {
+    margin-top: 100%;
+}
+
+
+
+.text_style {
+    margin-top: 1%;
+    list-style-type: none;
+    color: white;
+    font-weight: 500;
+}
+
+.home {
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    margin-top: 100%;
+    margin-left: 6%;
+}
+
+.common_style {
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    margin-top: 40%;
+    margin-left: 6%;
+}
+
+.message {
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    margin-top: 300%;
+    margin-left: 6%;
+}
+
+.exit {
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    margin-top: 60%;
+    margin-left: 6%;
+}
