@@ -1,13 +1,41 @@
-import React from "react";
+import { React , useEffect , useState } from "react";
 import './List.css';
 import NewIcon from '../../Images/NewIcon.png';
 import data from '../../data/compareX.json';
 
 
+
 export default function List( { currentMonth,combinedProductValues,isMonthlyComparison } ) {
 
-    let k = "Compare"+combinedProductValues;
 
+    const[key,setKey] = useState("");
+    
+
+
+    useEffect( () => {
+        if(combinedProductValues && combinedProductValues.length === 2){
+            let tempKey = "Compare" + combinedProductValues;
+            if(tempKey in data.monthly_comparison[getMonth]){
+                setKey(tempKey);
+            }
+            else if( (tempKey in data.monthly_comparison[getMonth]) === false ){
+                let reversedKey = "Compare" + combinedProductValues.split("").reverse().join("");
+                setKey(reversedKey);
+            }
+            else{
+                setKey("");
+            }
+        }
+    },[combinedProductValues])
+
+
+    const today = new Date();
+
+    let getMonth = today.toLocaleString('default', {
+        month: 'long',
+    });
+
+    
     return(
 
 
@@ -17,7 +45,7 @@ export default function List( { currentMonth,combinedProductValues,isMonthlyComp
                 {
                     isMonthlyComparison ?
                     (
-                        data.monthly_comparison && data.monthly_comparison[currentMonth] && data.monthly_comparison[currentMonth][k] && data.monthly_comparison[currentMonth][k].map( (listEle) => (
+                        data.monthly_comparison && data.monthly_comparison[getMonth] && data.monthly_comparison[getMonth][key] && data.monthly_comparison[getMonth][key].map( (listEle) => (
                             <>
                                 <li className="list_ele"> <img src={NewIcon}/> {listEle}</li>
                                 <div className="list_line"></div>
@@ -27,7 +55,7 @@ export default function List( { currentMonth,combinedProductValues,isMonthlyComp
                     (
                         Object.keys(data.monthly_comparison).map( (eachMonth) => (
                             Object.keys(data.monthly_comparison[eachMonth]).map((val) => (
-                                k && val === k ?
+                                key && val === key ?
                                     (
                         
                                         data.monthly_comparison[eachMonth][val].map( (listEle) => (
