@@ -9,6 +9,9 @@ export default function ComparisonContainer() {
     
     const[firstProductValue,setFirstProductValue] = useState("");
     const[secondProductValue,setSecondProductValue] = useState("");
+    const[monthValueFromSearch,setMonthValueFromSearch] = useState("");
+    const[isComingFromSearch,setIsComingFromSearch] = useState(false);
+
 
     const receiveFirstProduct = (val) => {
         setFirstProductValue(val);
@@ -18,7 +21,12 @@ export default function ComparisonContainer() {
         setSecondProductValue(val);
     }
 
-    
+    const receiveMonthValue = (val,isSearch) => {
+        setMonthValueFromSearch(val);
+        setIsComingFromSearch(isSearch);
+    }
+
+
     return(
 
         <div>
@@ -26,10 +34,12 @@ export default function ComparisonContainer() {
                 receiveFirstProduct = {receiveFirstProduct}
                 receiveSecondProduct = {receiveSecondProduct}
             />
-            <SearchBar/>
+            <SearchBar receiveMonthValue = {receiveMonthValue} />
             <MonthlyComparison
                 firstProductValue = {firstProductValue}
                 secondProductValue = {secondProductValue}
+                monthValueFromSearch = {monthValueFromSearch}
+                isComingFromSearch = {isComingFromSearch}
             />
             <OverallComparison
                 firstProductValue = {firstProductValue}

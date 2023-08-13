@@ -4,7 +4,7 @@ import './MonthlyComparison.css';
 import List from "../List/List";
 
 
-export default function MonthlyComparison({firstProductValue,secondProductValue}) {
+export default function MonthlyComparison( { firstProductValue, secondProductValue, monthValueFromSearch , isComingFromSearch } ) {
     const today = new Date();
 
     let getMonth = today.toLocaleString('default', {
@@ -17,11 +17,13 @@ export default function MonthlyComparison({firstProductValue,secondProductValue}
     return(
         
         <ComparisonCard>
-            <h3 className="month_name">{getMonth} comparison</h3>
+            <h3 className="month_name">{isComingFromSearch ? monthValueFromSearch : getMonth} comparison</h3>
             <List
                 currentMonth = {getMonth}
                 combinedProductValues = {combinedProductValues}
                 isMonthlyComparison = {true}
+                monthValueFromSearch = {monthValueFromSearch}
+                isComingFromSearch = {isComingFromSearch}
             />
         </ComparisonCard>
     );

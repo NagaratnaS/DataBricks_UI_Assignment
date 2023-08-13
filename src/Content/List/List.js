@@ -5,8 +5,21 @@ import data from '../../data/compareX.json';
 
 
 
-export default function List( { currentMonth,combinedProductValues,isMonthlyComparison } ) {
+export default function List( { currentMonth,combinedProductValues,isMonthlyComparison , monthValueFromSearch , isComingFromSearch } ) {
 
+    let getMonth = "";
+
+    if(isComingFromSearch){
+        getMonth = monthValueFromSearch;
+    }
+    else{
+        const today = new Date();
+        getMonth = today.toLocaleString('default', {
+        month: 'long',
+    });
+
+    }
+    
 
     const[key,setKey] = useState("");
     
@@ -29,13 +42,6 @@ export default function List( { currentMonth,combinedProductValues,isMonthlyComp
     },[combinedProductValues])
 
 
-    const today = new Date();
-
-    let getMonth = today.toLocaleString('default', {
-        month: 'long',
-    });
-
-    
     return(
 
 

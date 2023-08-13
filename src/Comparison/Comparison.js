@@ -19,6 +19,8 @@ export default function Comparison({receiveFirstProduct,receiveSecondProduct}){
         receiveSecondProduct(event.target.value);
     }
 
+    
+
     return(
         <div>
             <div className='button_and_text_container'>
