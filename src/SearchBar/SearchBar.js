@@ -39,6 +39,7 @@ export default function SearchBar( { receiveMonthValue  } ){
                     placeholder="What can we help you find?" 
                     className="search_field"
                     onChange={textInputChangeHandler}
+                    value={textInput}
                 >
                 </input>
 
